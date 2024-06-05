@@ -8,14 +8,16 @@ int calculateEasterSunday(int year) {
     int B = (2 * D + 4 * E + 6 * A + 5) % 7;
     int MarchDate = 22 + A + B;
 
-    // Special Years 
+    //Special Years
     if (year == 1954 || year == 1981 || year == 2049 || year == 2076) {
         MarchDate -= 7;
+        std::cout << "Special year adjustment applied (-7 days).\n";
     }
+    
 
-    //Overflow months 
     if (MarchDate > 31) {
-        std::cout << "Easter Sunday for year " << year << " is April " << (MarchDate - 31) << std::endl;
+        int AprilDate = MarchDate - 31;
+        std::cout << "Easter Sunday for year " << year << " is April " << AprilDate << std::endl;
     } else {
         std::cout << "Easter Sunday for year " << year << " is March " << MarchDate << std::endl;
     }
