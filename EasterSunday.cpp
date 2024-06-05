@@ -38,9 +38,26 @@ void calculateEasterSunday(int year) {
 }
 
 int main() {
-    int year;
-    std::cout << "Enter a year: ";
-    std::cin >> year;
-    calculateEasterSunday(year);
+    std::string input;
+    do {
+        std::cout << "Enter a year (between 1584 and 4098), or type 'x' to exit: ";
+        std::cin >> input;
+
+        if (input == "x" || input == "X") {
+            break;
+        }
+
+        try {
+            int year = std::stoi(input);
+            calculateEasterSunday(year);
+        } catch (std::invalid_argument& e) {
+            std::cout << "Invalid input. Please enter a valid year or 'x' to exit.\n";
+        } catch (std::out_of_range& e) {
+            std::cout << "Input out of range. Please enter a valid year within the specified range.\n";
+        }
+
+        std::cout << std::endl;
+    } while (true);
+
     return 0;
 }
