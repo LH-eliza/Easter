@@ -1,6 +1,6 @@
 # Easter Sunday 
 
-Quickly calculate the expecte results for Easter assignment, instead of repeating calculations.
+Quick assignment reviewer.
 
 How to Compile and Run
 Save the above code to a file named EasterSunday.cpp.
